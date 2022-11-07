@@ -7,13 +7,13 @@ RSpec.describe Food, type: :model do
                    price: 50, quantity: 2)
   end
 
-  before { subject.save }
+  before(:example) { subject.save }
+
+  it 'Validation of the new food' do
+    expect(subject).to be_valid
+  end
 
   context 'Testing name argument' do
-    it 'Validation of the new food' do
-      expect(subject).to be_valid
-    end
-
     it 'Name must be present' do
       subject.name = nil
       expect(subject).to_not be_valid

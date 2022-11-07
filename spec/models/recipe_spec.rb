@@ -1,19 +1,19 @@
-require 'rails_helper'
+require_relative '../rails_helper'
 
 RSpec.describe Recipe, type: :model do
   user = User.create(name: 'Tom')
   subject do
-    user.recipes.new(name: 'Apple Cake', preparation_time: 10,
-                     cooking_time: 50, description: 'This is a easy recipe to follow', public: true)
+    user.recipes.new(name: 'Apple Cake', preparation_time: '10m',
+                     cooking_time: '10m', description: 'This is a easy recipe to follow', public: false)
   end
 
-  before { subject.save }
+  before(:example) { subject.save }
+
+  it 'Validation of the new recipe' do
+    expect(subject).to be_valid
+  end
 
   context 'Testing name argument' do
-    it 'Validation of the new food' do
-      expect(subject).to be_valid
-    end
-
     it 'Name must be present' do
       subject.name = nil
       expect(subject).to_not be_valid
@@ -25,26 +25,26 @@ RSpec.describe Recipe, type: :model do
     end
   end
 
-  context 'Testing price argument' do
-    it 'Price must be an integer' do
-      subject.price = 'a'
+  context 'Testing preparation time argument' do
+    it 'Should be lesser than 5 char' do
+      subject.preparation_time = '10 minutes'
       expect(subject).to_not be_valid
     end
 
-    it 'Price must be greater than 0' do
-      subject.price = -52
+    it 'Should not be nil' do
+      subject.preparation_time = nil
       expect(subject).to_not be_valid
     end
   end
 
-  context 'Testing quantity argument' do
-    it 'Quantity must be an integer' do
-      subject.quantity = 'a'
+  context 'Testing coooking time argument' do
+    it 'Should be lesser than 5 char' do
+      subject.cooking_time = '10 minutes'
       expect(subject).to_not be_valid
     end
 
-    it 'Quantity must be grater than 0' do
-      subject.quantity = -1
+    it 'Should not be nil' do
+      subject.cooking_time = nil
       expect(subject).to_not be_valid
     end
   end
