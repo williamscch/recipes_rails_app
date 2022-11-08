@@ -2,7 +2,7 @@
   <div class='navbar-group'>
     <%= link_to 'Menu', root_path, class:'nav-bar-icon' %>
     <%= link_to 'Foods', foods_path, class:'nav-bar-icon' %>
-    <%= link_to 'Recipes', user_recipes_path, class:'nav-bar-icon' %>
+    <%= link_to 'Recipes', user_recipes_path(current_user.id), class:'nav-bar-icon' %>
   </div>
   <div class='navbar-group' >
     <%= link_to "Back", :back, class:'nav-bar-icon' %>

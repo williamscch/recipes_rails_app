@@ -6,6 +6,6 @@ Rails.application.routes.draw do
       }
 
    root 'users#index'
-   get 'users/show', to: 'users#show', as: 'user_recipes'
-   get 'foods', to: 'foods#index', as: 'foods'
+   get 'users/:id', to: 'users#show', as: :user_recipes
+   get 'foods', to: 'foods#index', as: :foods
 end
