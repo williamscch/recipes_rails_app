@@ -150,3 +150,11 @@ body {
 .table tr:nth-child(odd) {
   background-color: white;
 }
+
+.delete {
+  color: cadetblue;
+}
+
+.delete:hover {
+  text-decoration: underline;
+}
