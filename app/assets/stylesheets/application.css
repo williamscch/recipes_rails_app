@@ -25,6 +25,16 @@ body {
   padding: 0 1rem;
 }
 
+.header-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
 .title {
   font-size: 2rem;
   font-weight: bold;
@@ -88,4 +98,41 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+}
+
+/* tables */
+
+.table {
+  width: 80%;
+  margin: 0 auto;
+  border: 2px solid #000;
+}
+
+.table th {
+  text-align: left;
+  width: auto;
+  height: 1.5rem;
+  background-color: grey;
+  margin: 0;
+  padding: 0.5rem;
+  color: white;
+  font-style: oblique;
+
+}
+
+.table td {
+  text-align: left;
+  width: auto;
+  height: 1.5rem;
+  margin: 0;
+  padding: 0.5rem;
+}
+
+.table tr:nth-child(even) {
+  background-color: lightgray;
+
+}
+
+.table tr:nth-child(odd) {
+  background-color: white;
 }
