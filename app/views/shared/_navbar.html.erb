@@ -1,6 +1,12 @@
 <div class='navbar'>
-  <%= link_to "Back", :back, class:'nav-bar-icon' %>
-  <%= link_to 'Edit Profile', edit_user_registration_path, class:'nav-bar-icon'%>
-  <%= link_to("Log out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }) %>
-
+  <div class='navbar-group'>
+    <%= link_to 'Menu', root_path, class:'nav-bar-icon' %>
+    <%= link_to 'Foods', foods_path, class:'nav-bar-icon' %>
+    <%= link_to 'Recipes', user_recipes_path, class:'nav-bar-icon' %>
+  </div>
+  <div class='navbar-group' >
+    <%= link_to "Back", :back, class:'nav-bar-icon' %>
+    <%= link_to 'Edit Profile', edit_user_registration_path, class:'nav-bar-icon'%>
+    <%= link_to("Log out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }) %>
+</div>
 </div>

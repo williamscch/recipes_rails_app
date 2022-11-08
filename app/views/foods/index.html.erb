@@ -14,9 +14,9 @@
 
   <% @foods.each do |food| %>
     <tr>
-      <td><%= food%></td>
-      <td>Grams</td>
-      <td>5$</td>
+      <td><%= food.name %></td>
+      <td><%= food.measurement_unit %></td>
+      <td><%= food.price %></td>
       <td>Delete</td>
     </tr>
   <% end %>
