@@ -9,7 +9,7 @@ body {
 }
 
 .navbar {
-  width: 100%;
+  width: 95%;
   gap: 1rem;
   display: flex;
   justify-content: flex-end;
@@ -51,4 +51,3 @@ body {
   display: flex;
   flex-direction: row;
 }
-
