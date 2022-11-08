@@ -15,7 +15,7 @@ RSpec.describe User, type: :model do
     expect(subject).to_not be_valid
   end
 
-  it 'A valid name should be accepted' do 
+  it 'A valid name should be accepted' do
     subject.name = 'David'
     expect(subject).to be_valid
   end
