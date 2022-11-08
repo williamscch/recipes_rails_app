@@ -1,0 +1,15 @@
+<section>
+  <h1>These are all the recipes avaible for <%=@user.name%></h1>
+  <div class='recipe-card-container'><% @recipes.each do |recipe|%>
+      <article class='recipe-card'>
+        <div class='recipe-name-div'>
+          <h2><%=link_to recipe.name, recipe_path(recipe)%></h2>
+          <%= button_to 'Remove' %>
+        </div>
+        <div class='recipe-description'>
+          <h3>Description: <%=recipe.description%></h3>
+        </div>
+      </article>
+    <%end%>
+  </div>
+</section>
