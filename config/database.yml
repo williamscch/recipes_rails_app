@@ -33,7 +33,7 @@ development:
   username: postgres
 
   # The password associated with the postgres role (username).
-  password: postgres
+  password: 1234
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -42,7 +42,7 @@ development:
 
   # The TCP port the server listens on. Defaults to 5432.
   # If your server runs on a different port number, change accordingly.
-  #port: 5433
+  port: 5433
 
   # Schema search path. The server defaults to $user,public
   #schema_search_path: myapp,sharedapp,public
@@ -61,7 +61,7 @@ test:
   database: recipeapp_test
   host: localhost
   username: postgres
-  password: postgres
+  password: 1234
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
