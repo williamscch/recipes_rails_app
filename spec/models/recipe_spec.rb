@@ -1,7 +1,7 @@
 require_relative '../rails_helper'
 
 RSpec.describe Recipe, type: :model do
-  user = User.create(name: 'Tom')
+  user = User.create!(name: 'Tomas', email: 'tomas@email.com', password: '123456')
   subject do
     user.recipes.new(name: 'Apple Cake', preparation_time: '10m',
                      cooking_time: '10m', description: 'This is a easy recipe to follow', public: false)
