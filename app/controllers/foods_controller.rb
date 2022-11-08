@@ -11,12 +11,9 @@ class FoodsController < ApplicationController
   def create
     @food = Food.new(params.require(:food).permit(:name, :measurement_unit, :price, :quantity))
     @food.user_id = current_user.id
+    return unless @food.save
 
-    @food.save
-
-    if @food.save
-      redirect_to foods_path
-    end
+    redirect_to foods_path
   end
 
   def destroy
@@ -24,5 +21,4 @@ class FoodsController < ApplicationController
     @food.destroy
     redirect_to foods_path
   end
-
 end
