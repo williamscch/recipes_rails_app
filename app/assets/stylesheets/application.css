@@ -117,7 +117,6 @@ body {
   padding: 0.5rem;
   color: white;
   font-style: oblique;
-
 }
 
 .table td {
@@ -130,7 +129,6 @@ body {
 
 .table tr:nth-child(even) {
   background-color: lightgray;
-
 }
 
 .table tr:nth-child(odd) {
