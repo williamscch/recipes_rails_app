@@ -1,7 +1,8 @@
 <%= render 'shared/navbar' %>
 <div class='container'>
 <h1 class='title'> Public Recipes</h1>
-<%= link_to user_recipes_path, class:'public-recipe' do %>
+
+<%= link_to user_recipes_path(current_user.id), class:'public-recipe' do %>
   <div>
     <h3>Recipe Name</h3>
     <p>By: Author</p>

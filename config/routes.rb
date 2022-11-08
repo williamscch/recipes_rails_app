@@ -6,11 +6,10 @@ Rails.application.routes.draw do
   }
 
   root 'users#index'
-  # get 'users/show', to: 'users#show', as: 'user_recipes'
-  get 'foods', to: 'foods#index', as: 'foods'
+  get 'users/:id', to: 'users#show', as: :user_recipes
+  get 'foods', to: 'foods#index', as: :foods
   get 'recipes', to: 'recipes#index', as: 'recipes'
   get 'recipes/show', to: 'recipes#show', as: 'recipe'
   get 'recipes/new', to: 'recipes#new', as: 'recipes_new'
   post 'recipes/create', to: 'recipes#create', as: 'recipes_create'
-
 end
