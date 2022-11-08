@@ -9,11 +9,27 @@ body {
 }
 
 .navbar {
-  width: 95%;
+  width: 100%;
   gap: 1rem;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding: 1rem;
+  background-color: moccasin;
+}
+
+.navbar-group {
+  display: flex;
+  gap: 1.5rem;
+  color: black;
+  padding: 0 1rem;
+}
+
+.navbar-group a {
+  color: black;
+}
+
+.navbar-group a:hover {
+  color: cadetblue;
 }
 
 .container {
