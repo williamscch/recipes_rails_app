@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-    devise_for :users, path: ''
+    devise_for :users, path: '', path_names: {
+        sign_in: 'login',
+        sign_out: 'logout',
+        sign_up: 'signup'
+      }
 
-   get '/', to: 'users#index'
+   root 'users#index'
+   get 'users/show', to: 'users#show', as: 'user_recipes'
 end
