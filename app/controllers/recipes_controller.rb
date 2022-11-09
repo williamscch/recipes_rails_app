@@ -4,6 +4,10 @@ class RecipesController < ApplicationController
     @recipes = @user.recipes.all
   end
 
+  def publics
+    @recipes = Recipe.where(public: true)
+  end
+
   def show
     @user = User.find(current_user.id)
     @recipe = @user.recipes.find(params[:format])
@@ -24,19 +28,15 @@ class RecipesController < ApplicationController
     end
   end
 
-  # def destroy
-  #   find_recipe
-  #   @recipe.destroy
-  #   redirect_to user_recipes_path
-  # end
+  def destroy
+    @recipe = Recipe.find(params[:id])
+    @recipe.destroy
+    redirect_to recipes_path
+  end
 
   private
 
   def recipe_params
     params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public)
   end
-
-  # def find_recipe
-  #   @recipe = Recipe.find(params[:id])
-  # end
 end

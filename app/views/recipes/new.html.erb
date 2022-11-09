@@ -1,3 +1,4 @@
+<%= render 'shared/navbar' %>
 <section>
   <h1>Create your New Recipe</h1>
   <%= form_with model: Recipe, url: recipes_create_path do |form|%>
@@ -19,7 +20,7 @@
     </div>
     <div>
       <%= form.check_box :public%>
-      <%= form.label :public, 'This is a public recipe?'%>
+      <%= form.label :public, 'Is this a public recipe?'%>
     </div>
     <div>
       <%= form.submit "Create Post" %><br>

@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   get 'recipes/show', to: 'recipes#show', as: 'recipe'
   get 'recipes/new', to: 'recipes#new', as: 'recipes_new'
   post 'recipes/create', to: 'recipes#create', as: 'recipes_create'
+  delete 'recipe/:id', to: 'recipes#destroy', as: :recipe_delete
+  get 'recipes/publics', to: 'recipes#publics', as: :public_recipes
 end

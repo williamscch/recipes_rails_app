@@ -1,8 +1,8 @@
 <%= render 'shared/navbar' %>
-<%= render 'shared/navbar' %>
 <section class='index-recipe'>
   <div class='recipe-header-public'>
     <h1>These are all the public recipes avaible</h1>
+    <%=link_to 'New Recipe', recipes_new_path%>
   </div>
   <div class='recipe-card-container'><% @recipes.each do |recipe|%>
       <article class='recipe-card'>

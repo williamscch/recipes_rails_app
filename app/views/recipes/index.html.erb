@@ -1,13 +1,20 @@
-<section>
-  <h1>These are all the recipes avaible for <%=@user.name%></h1>
+<%= render 'shared/navbar' %>
+<section class='index-recipe'>
+  <div class='recipe-header'>
+    <h1>These are all the recipes avaible for <%=@user.name%></h1>
+    <%=link_to 'New Recipe', recipes_new_path%>
+  </div>
   <div class='recipe-card-container'><% @recipes.each do |recipe|%>
       <article class='recipe-card'>
         <div class='recipe-name-div'>
           <h2><%=link_to recipe.name, recipe_path(recipe)%></h2>
-          <%= button_to 'Remove' %>
+          <%= link_to "Delete", recipe_delete_path(recipe.id),data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?"
+      } %>
         </div>
         <div class='recipe-description'>
-          <h3>Description: <%=recipe.description%></h3>
+          <h3><%=recipe.description%></h3>
         </div>
       </article>
     <%end%>
