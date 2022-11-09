@@ -2,7 +2,7 @@
 <div class='container'>
 <div class='header-box'>
   <h1 class='title'>Foods</h1>
-  <%= button_to 'New Food', class: 'actions' %>
+  <%= link_to 'New Food', new_food_path, class: 'actions' %>
 </div>
 <table class='table'>
   <tr>
@@ -16,8 +16,11 @@
     <tr>
       <td><%= food.name %></td>
       <td><%= food.measurement_unit %></td>
-      <td><%= food.price %></td>
-      <td>Delete</td>
+      <td>$ <%= food.price %></td>
+      <td  class='delete' ><%= link_to "Delete", delete_food_path(food.id), data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?"
+      } %></td>
     </tr>
   <% end %>
 </table>
