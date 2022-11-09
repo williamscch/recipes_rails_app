@@ -1,0 +1,25 @@
+<%= render 'shared/navbar' %>
+<div class='container'>
+<h1 class='title'>Shopping List</h1>
+<div class='header-box'>
+  <h1 class='title'>Amoung of items to buy</h1>
+  <h1 class='title'>Total value of food needed: $ </h1>
+
+</div>
+<table class='table'>
+  <tr>
+    <th>Food</th>
+    <th>Quantity</th>
+    <th>Price</th>
+  </tr>
+
+  <% @foods.each do |food| %>
+    <tr>
+      <td><%= food.name %></td>
+      <td><%= food.quantity %></td>
+      <td>$ <%= food.price %></td>
+    </tr>
+  <% end %>
+</table>
+</div>
+
