@@ -1,0 +1,27 @@
+<%= render 'shared/navbar' %>
+<div class='container'>
+  <h1 class='title'>New Food</h1>
+<%= form_with model: @food, url: foods_create_path do |f| %>
+
+  <div class="field">
+    <%= f.label :food %>
+    <%= f.text_field :name, :required => true, class: 'box-registration' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :measurement_unit %>
+    <%= f.text_field :measurement_unit, :required => true, class: 'box-registration' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :price %>
+    <%= f.number_field :price, :required => true, class: 'box-registration' %>
+  </div>
+  <div class="field">
+    <%= f.label :quantity %>
+    <%= f.number_field :quantity, :required => true, class: 'box-registration' %>
+  </div>
+  <%= @food.user_id %>
+  <%= f.submit "Add Food", class:"actions" %>
+<% end %>
+</div>
