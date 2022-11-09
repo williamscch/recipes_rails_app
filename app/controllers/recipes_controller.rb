@@ -4,10 +4,6 @@ class RecipesController < ApplicationController
     @recipes = @user.recipes.all
   end
 
-  def publics
-    @recipes = Recipe.where(public: true)
-  end
-
   def show
     @user = User.find(current_user.id)
     @recipe = @user.recipes.find(params[:format])

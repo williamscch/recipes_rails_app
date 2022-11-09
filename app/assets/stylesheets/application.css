@@ -158,12 +158,13 @@ body {
 
 /* Styles and Layout for the Recipes index page */
 
-.index-recipe, .show_recipe {
-width: 100%;
-display: flex;
-flex-direction: column;
-align-items: center;
-margin: 1rem;
+.index-recipe,
+.show_recipe {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
 }
 
 .recipe-header {
@@ -210,16 +211,16 @@ margin: 1rem;
   justify-content: center;
 }
 
-.recipe-info span{
+.recipe-info span {
   text-align: end;
 }
 
-.recipe-info ul{
-display: flex;
-flex-direction: column;
-list-style: none;
-gap: 1rem;
-padding: 0;
+.recipe-info ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  gap: 1rem;
+  padding: 0;
 }
 
 .recipe-buttons {
