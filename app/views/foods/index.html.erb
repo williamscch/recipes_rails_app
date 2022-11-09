@@ -16,7 +16,7 @@
     <tr>
       <td><%= food.name %></td>
       <td><%= food.measurement_unit %></td>
-      <td><%= food.price %></td>
+      <td>$ <%= food.price %></td>
       <td  class='delete' ><%= link_to "Delete", delete_food_path(food.id), data: {
         turbo_method: :delete,
         turbo_confirm: "Are you sure?"

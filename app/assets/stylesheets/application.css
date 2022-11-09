@@ -3,9 +3,14 @@
 }
 
 body {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-image: url(https://media.istockphoto.com/id/1197208940/vector/vegetables-indian-spices-for-chicken-curry-isolated-on-white.jpg?s=612x612&w=0&k=20&c=BB6qecXodmEhhEZ035qhaMjAEZ0NUcijaHScQN82OQk=);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .navbar {
