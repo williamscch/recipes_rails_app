@@ -156,6 +156,81 @@ body {
   background-color: white;
 }
 
+/* Styles and Layout for the Recipes index page */
+
+.index-recipe,
+.show_recipe {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
+}
+
+.recipe-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+}
+
+.recipe-card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 65%;
+}
+
+.recipe-card {
+  border: 1px solid black;
+  border-radius: 5px;
+  display: grid;
+  width: 100%;
+  padding: 10px;
+  gap: 10px;
+  grid-template-columns: 35% 65%;
+  grid-template-rows: 100%;
+}
+
+.recipe-name-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.recipe-name-div h2 {
+  margin: 0;
+}
+
+/* Styles and Layout for the Recipe Show page */
+
+.recipe-header-public {
+  display: flex;
+  justify-content: center;
+}
+
+.recipe-info span {
+  text-align: end;
+}
+
+.recipe-info ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  gap: 1rem;
+  padding: 0;
+}
+
+.recipe-buttons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 2px black;
+  padding-bottom: 1rem;
+}
+
 .delete {
   color: cadetblue;
 }

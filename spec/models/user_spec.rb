@@ -1,17 +1,14 @@
 require_relative '../rails_helper'
 
 RSpec.describe User, type: :model do
-  subject { User.new(name: 'Tom') }
+  subject do
+    User.new(name: 'Tommy', email: 'tommy@email.com', password: '123456')
+  end
 
   before(:example) { subject.save }
 
   it 'Name must be present' do
     subject.name = nil
-    expect(subject).to_not be_valid
-  end
-
-  it 'Name must be less than 30 char' do
-    subject.name = 'tomasrichradlisonjosedelasantisimatrinidadpontepalaciosyblanco'
     expect(subject).to_not be_valid
   end
 

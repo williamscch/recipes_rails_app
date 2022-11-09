@@ -1,0 +1,29 @@
+<%= render 'shared/navbar' %>
+<section>
+  <h1>Create your New Recipe</h1>
+  <%= form_with model: Recipe, url: recipes_create_path do |form|%>
+    <div>
+      <%= form.label :name%>
+      <%= form.text_field :name%>
+    </div>
+    <div>
+      <%= form.label :preparation_time%>
+      <%= form.text_field :preparation_time%>
+    </div>
+    <div>
+      <%= form.label :cooking_time%>
+      <%= form.text_field :cooking_time%>
+    </div>
+    <div>
+      <%= form.label :description%>
+      <%= form.text_field :description%>
+    </div>
+    <div>
+      <%= form.check_box :public%>
+      <%= form.label :public, 'Is this a public recipe?'%>
+    </div>
+    <div>
+      <%= form.submit "Create Post" %><br>
+    </div>
+  <%end%>
+</section>
