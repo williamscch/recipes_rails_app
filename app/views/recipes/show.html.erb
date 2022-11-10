@@ -6,7 +6,7 @@
     <%= render 'recipe-show' %>
 
   <div class='recipe-buttons' >
-      <%= button_to "Generate Shopping List" %>
+      <%= link_to "Generate Shopping List", shop_path %>
       <%= link_to "Add Ingredient", new_recipe_food_path(@recipe) %>
   </div>
   <%= render 'shared/food_table' do %>
