@@ -1,0 +1,12 @@
+<h1>Shopping List</h1>
+
+<div>
+  <div>Amount of items to buy: <%= @items_to_buy %></div>
+  <div>Total value of food needed: <%= @total_value %></div>
+</div>
+
+<%= render 'shared/shopping_table' do %>
+  <% @recipe_foods.each do |recipe_food| %>
+    <%= render 'recipe_foods/shopping_item', recipe_food: %>
+  <% end %>
+<% end %>

@@ -1,0 +1,24 @@
+<div class='recipe-info'>
+  <div class='recipe-time'>
+    <p>
+      <strong>Preparation time (min):</strong>
+      <%= @recipe.preparation_time %>
+    </p>
+    <p>
+      <strong>Cooking time (min):</strong>
+      <%= @recipe.cooking_time %>
+    </p>
+    <p>
+      <strong>Description:</strong>
+      <%= @recipe.description %>
+    </p>
+  </div>
+
+  <div class="form-check">
+    <strong>Public</strong>
+    <label class="switch">
+      <input type="checkbox" role="switch" <%= 'checked' if @recipe.public %> disabled class='check'>
+      <span class="slider round"></span>
+    </label>
+  </div>
+</div>
