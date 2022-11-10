@@ -10,8 +10,8 @@
         <h3>by: <%=recipe.user.name%></h3>
       </div>
       <div class='recipe-name-div'>
-        <h3>Total food items: <%=%></h3>
-        <h3>Total price: $ <%=%></h3>
+        <h3>Total food items: <%= recipe.recipe_foods.count%></h3>
+        <h3>Total price: $ <%= number_to_currency(recipe.total_cost)%></h3>
       </div>
     </div>
   <%end%>
