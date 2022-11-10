@@ -7,6 +7,10 @@ RSpec.describe 'Recipes', type: :request do
       email: 'jhon@email.com',
       password: '123456'
     )
+    get '/'
+    find('#user_email').set('jhon@email.com')
+    find('#user_password').set('123456')
+    find("input[type='submit']").click
   end
   describe 'GET /index' do
     it 'returns http success' do
