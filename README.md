@@ -67,12 +67,12 @@ $ rspec ./spec/#{filename}_spec.rb
 👤 **Williams Colmenares**
 - GitHub: [@williamscch](https://github.com/williamscch)
 - Twitter: [@wdavidcch](https://twitter.com/wdavidcch)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/williamscolmenaresch/)
+- LinkedIn: [Williams Colmenares on LinkedIn](https://www.linkedin.com/in/williamscolmenaresch/)
 
-👤 ** Nimrod Acosta **
-- GitHub: [nimplay](https://github.com/nimplay)
-- Twitter: [NimrodAcosta](https://twitter.com/NimrodAcosta)
-- LinkedIn: [nimrod-acosta](https://www.linkedin.com/in/nimrod-acosta-734330169/)
+👤 **Nimrod Acosta**
+- GitHub: [@Nimplay](https://github.com/nimplay)
+- Twitter: [@NimrodAcosta](https://twitter.com/NimrodAcosta)
+- LinkedIn: [Nimrod-Acosta](https://www.linkedin.com/in/nimrod-acosta-734330169/)
 
 ## 🤝 Contributing
 
