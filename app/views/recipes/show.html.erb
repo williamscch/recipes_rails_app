@@ -1,26 +1,15 @@
 <%= render 'shared/navbar' %>
-<section class="show_recipe">
-  <div class="recipe-header">
-    <h2><%=@recipe.name%></h2>
+<div class="container">
+  <p style="color: green"><%= notice %></p>
+  <h1 class="title"><%= @recipe.name %></h1>
+
+    <%= render 'recipe-show' %>
+
+  <div class='recipe-buttons' >
+      <%= button_to "Generate Shopping List" %>
+      <%= link_to "Add Ingredient", new_recipe_food_path(@recipe) %>
   </div>
-  <div class="recipe-info">
-    <span>
-      <%if @recipe.public%>
-        This is a public recipe
-      <%else%>
-        This is a private recipe
-      <%end%>
-    </span>
-    <ul>
-      <li>Preparation Time: <%=@recipe.preparation_time%></li>
-      <li>Cooking Time: <%=@recipe.cooking_time%></li>
-      <li>Steps: <%=@recipe.description%></li>
-    </ul>
-    <div class="recipe-buttons">
-      <button>Generate shopping list</button>
-      <button>Add Ingredient</button>
-    </div>
-  </div>
-  <div class="recipe-foods-info">
-  </div>
-</section>
+  <%= render 'shared/food_table' do %>
+    <%= render @recipe_foods %>
+  <% end %>
+</div>

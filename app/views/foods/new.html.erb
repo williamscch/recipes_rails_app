@@ -1,6 +1,7 @@
 <%= render 'shared/navbar' %>
 <div class='container'>
   <h1 class='title'>New Food</h1>
+
 <%= form_with model: @food, url: foods_create_path do |f| %>
 
   <div class="field">
