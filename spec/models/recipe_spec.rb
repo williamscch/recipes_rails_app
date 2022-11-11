@@ -26,8 +26,8 @@ RSpec.describe Recipe, type: :model do
   end
 
   context 'Testing preparation time argument' do
-    it 'Should be lesser than 5 char' do
-      subject.preparation_time = '10 minutes'
+    it 'Should be lesser than 10 char' do
+      subject.preparation_time = '10 minutesss'
       expect(subject).to_not be_valid
     end
 
@@ -38,8 +38,8 @@ RSpec.describe Recipe, type: :model do
   end
 
   context 'Testing coooking time argument' do
-    it 'Should be lesser than 5 char' do
-      subject.cooking_time = '10 minutes'
+    it 'Should be lesser than 10 char' do
+      subject.cooking_time = '10 minutessss'
       expect(subject).to_not be_valid
     end
 

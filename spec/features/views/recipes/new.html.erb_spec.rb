@@ -12,15 +12,15 @@ RSpec.describe 'My recipes page' do
     find('#user_password').set('123456')
     find("input[type='submit']").click
 
-    visit recipes_new_path
+    visit recipes_new_path(@user1)
   end
 
   it 'should show the title' do
-    expect(page).to have_text 'Create your New Recipe'
+    expect(page).to have_text 'New recipe'
   end
 
   it 'Have to be the right path' do
-    expect(page.current_path).to eql('/recipes/new')
+    expect(page.current_path).to eql('/recipes/new/1')
   end
 
   it 'Should create the new post and redirects to the post show page' do
@@ -30,6 +30,6 @@ RSpec.describe 'My recipes page' do
     find('#recipe_description').set('Hamburger with cheese bacon meat lettuce tomatoes and chicken')
     find("input[type='checkbox']").click
     find("input[type='submit']").click
-    expect(page.current_path).to eql('/recipes/show.1')
+    expect(page.current_path).to eql('/recipes/show/1')
   end
 end

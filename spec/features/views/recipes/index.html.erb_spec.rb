@@ -23,11 +23,11 @@ RSpec.describe 'My recipes page' do
     find('#user_password').set('123456')
     find("input[type='submit']").click
 
-    visit recipes_path
+    visit recipes_path(@user1)
   end
 
   it 'should show the title with the user name' do
-    expect(page).to have_text 'These are all the recipes avaible for Jhon First', count: 1
+    expect(page).to have_text "Welcome to #{@user1.name}'s Recipes", count: 1
   end
 
   it 'should have a recipe card' do
@@ -39,11 +39,11 @@ RSpec.describe 'My recipes page' do
   end
 
   it 'Should have a New recipe me link' do
-    expect(page).to have_link('New Recipe')
+    expect(page).to have_link('Create a new recipe')
   end
 
   it 'When I click on a recipe, it redirects me to that recipe show page' do
     click_on @recipe1.name
-    expect(page.current_path).to eql("/recipes/show.#{@recipe1.id}")
+    expect(page.current_path).to eql("/recipes/show/#{@recipe1.id}")
   end
 end
