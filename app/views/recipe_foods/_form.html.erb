@@ -1,0 +1,30 @@
+<%= form_with model: @recipe_food, url: add_new_recipe_food_path(recipe) do |form| %>
+  <% if recipe_food.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(recipe_food.errors.count, "error") %> prohibited this recipe_food from being saved:</h2>
+      <ul>
+        <% recipe_food.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= form.label :food_id%>
+    <%= form.select :food_id, @foods.map {|food| ["#{food.name}", food.id]}, {}, { class: 'box-registration' } %>
+  </div>
+
+  <div class="field">
+    <%= form.label :quantity%>
+    <%= form.number_field :quantity,  class: 'box-registration'%>
+  </div>
+  <div>
+
+  <div class="field">
+    <p>If food not present you may</p>
+    <%= link_to 'Add New Food', new_food_path, class: 'actions' %>
+  </div>
+
+    <%= form.submit class:"actions"%>
+  </div>
+<% end %>

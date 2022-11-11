@@ -1,0 +1,17 @@
+<%= render 'shared/navbar' %>
+<div class='container'>
+  <h1 class='title'>These are all the public recipes avaible</h1>
+
+  <% @recipes.each do |recipe|%>
+
+    <div class='recipe-card'>
+      <div class='recipe-name-div'>
+        <h2><%=link_to recipe.name, recipe_path(recipe)%></h2>
+        <h3>by: <%=recipe.user.name%></h3>
+      </div>
+      <div class='recipe-name-div'>
+        <h3>Total food items: <%= recipe.recipe_foods.count%></h3>
+        <h3>Total price: $ <%= number_to_currency(recipe.total_cost)%></h3>
+      </div>
+    </div>
+  <%end%>

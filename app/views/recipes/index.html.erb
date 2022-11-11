@@ -1,0 +1,40 @@
+<%= render 'shared/navbar' %>
+<p style="color: green"><%= notice %></p>
+
+<div class='container'>
+  <div class='header-box'>
+    <h1 class='title'>Welcome to <%= @current_user.name%>'s Recipes</h1>
+    <%= link_to "Create a new recipe", recipes_new_path(current_user.id), class: 'actions' %>
+  </div>
+
+
+<% if @recipes.empty? %>
+        <h3>Currently there aren't recipes in the database for this user</h3>
+      <% else %>
+
+
+
+  <% @recipes.each do |recipe| %>
+    <div class="recipe-card">
+      <div class="recipe-name-div">
+        <h2>
+          <%= link_to recipe.name, recipe, class:"link" %>
+        </h2>
+      <p  class='delete' ><%= link_to "Delete", recipe_delete_path(recipe.id), data: {
+          turbo_method: :delete,
+          turbo_confirm: "Are you sure?"
+        } %>
+      </p>
+    </div>
+    <p class="recipe-description">
+
+    <%= link_to recipe.description, recipe, class:"link" %>
+  </p>
+
+</div>
+
+  <% end %>
+<% end %>
+
+
+</div>

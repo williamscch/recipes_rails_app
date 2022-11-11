@@ -1,0 +1,15 @@
+<%= render 'shared/navbar' %>
+<div class="container">
+  <p style="color: green"><%= notice %></p>
+  <h1 class="title"><%= @recipe.name %></h1>
+
+    <%= render 'recipe-show' %>
+
+  <div class='recipe-buttons' >
+      <%= link_to "Generate Shopping List", shop_path %>
+      <%= link_to "Add Ingredient", new_recipe_food_path(@recipe) %>
+  </div>
+  <%= render 'shared/food_table' do %>
+    <%= render @recipe_foods %>
+  <% end %>
+</div>
