@@ -28,8 +28,8 @@ RSpec.describe 'My recipes page' do
     expect(page).to have_selector '.recipe-card'
   end
 
-  it 'should show the recipe description' do
-    expect(page).to have_content @recipe1.description
+  it 'should show the food items' do
+    expect(page).to have_content 'Total food items'
   end
 
   it 'Should have the recipes also from the second user' do
@@ -42,6 +42,6 @@ RSpec.describe 'My recipes page' do
 
   it 'When I click on a recipe, it redirects me to that recipe show page' do
     click_on @recipe1.name
-    expect(page.current_path).to eql("/recipes/show.#{@recipe1.id}")
+    expect(page.current_path).to eql("/recipes/show/#{@recipe1.id}")
   end
 end

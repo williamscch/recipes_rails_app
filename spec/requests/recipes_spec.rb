@@ -2,33 +2,30 @@ require_relative '../rails_helper'
 
 RSpec.describe 'Recipes', type: :request do
   before(:example) do
-    User.create(
+    @user1 = User.create(
       name: 'Jhon First',
       email: 'jhon@email.com',
       password: '123456'
     )
     get '/'
-    find('#user_email').set('jhon@email.com')
-    find('#user_password').set('123456')
-    find("input[type='submit']").click
   end
   describe 'GET /index' do
     it 'returns http success' do
-      get recipes_path
+      get recipes_path(@user1)
       expect(response).to have_http_status(:success)
     end
   end
 
   describe 'GET /show' do
     it 'returns http success' do
-      get recipe_path
+      get recipe_path(@user1)
       expect(response).to have_http_status(:success)
     end
   end
 
   describe 'GET /new' do
     it 'returns http success' do
-      get '/recipes/new'
+      get '/recipes/new/1'
       expect(response).to have_http_status(:success)
     end
   end

@@ -35,15 +35,15 @@ RSpec.describe 'My recipes page' do
   end
 
   it 'should have the preparation and cooking time' do
-    expect(page).to have_content 'Preparation Time'
-    expect(page).to have_content 'Cooking Time'
+    expect(page).to have_content 'Preparation time'
+    expect(page).to have_content 'Cooking time'
   end
 
   it 'should show the recipe description' do
     expect(page).to have_content @recipe1.description
   end
 
-  it 'Should have a add ingredient button' do
-    expect(page).to have_button('Add Ingredient')
+  it 'Should have a add ingredient link' do
+    expect(page).to have_link('Add Ingredient')
   end
 end

@@ -47,10 +47,10 @@ RSpec.describe 'My recipes page' do
   end
 
   it 'Should shows the right sum' do
-    expect(page).to have_content "Total value of food needed: $ #{@food1.price + @food2.price + @food3.price}"
+    expect(page).to have_content "Total Amount: $ #{@food1.price + @food2.price + @food3.price}"
   end
 
   it 'Should show the right amount of items' do
-    expect(page).to have_content 'Amoung of items to buy: 3'
+    expect(page).to have_content 'Total Items To buy: 3'
   end
 end
